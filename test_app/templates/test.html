@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block test %}
+    <h1>Тест №{{ test_number }}</h1>
+    <form action=" " method="post">
+        <h2>Вопрос: {{ question }}</h2>
+        <h3>{{ is_true }}</h3>
+        {% csrf_token %}
+        <button type="submit" name="answer" value="Yes">Да</button>
+        <button type="submit" name="answer" value="No">Нет</button>
+        <h3>{{ is_true }}</h3>
+    </form>
+{% endblock %}

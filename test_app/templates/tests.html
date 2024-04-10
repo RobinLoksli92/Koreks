@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+<style>
+    .button-container {
+        display: block;
+        margin-bottom: 10px;
+    }
+</style>
+
+{% block main %}
+    {% for test in tests %}
+    <div class='button-container'>
+        <a href={% url 'test' test_number=test.test_number %}>{{ test }}</a>
+    </div>
+    {% endfor %}
+{% endblock %}
